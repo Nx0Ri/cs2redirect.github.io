@@ -2,17 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Redirecting to CS2 server...</title>
+    <title>Redirecting to server...</title>
     <script>
-      // Хватаем всё после `?`
       const raw = window.location.search.slice(1);
-      // Заменяем слеши на двоеточия, убираем мусор
       const clean = raw.replaceAll("/", ":").replace(/[^0-9.:]/g, "");
-      // Если получилось что-то похожее на айпишник
       if (clean.length > 5) {
         window.location.href = "steam://connect/" + clean;
       } else {
-        document.write("<h1>💥 Invalid address</h1>");
+        document.write("<h1>Invalid address</h1>");
       }
     </script>
   </head>
